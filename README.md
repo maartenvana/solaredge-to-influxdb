@@ -9,8 +9,9 @@ docker build -t solar-edge-to-influxdb .
 # Running the container
 If everything is set correctly the script will push data every 60 seconds (by default) to influxdb
 ```
-docker run -it \
+docker run -d \
     --name solar-edge-to-influxdb \
+    --restart=always \
     -e "INVERTER_HOST=" \
     -e "INFLUXDB_HOST=" \
     -e "INFLUXDB_PORT=" \
