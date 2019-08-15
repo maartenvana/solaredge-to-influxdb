@@ -1,16 +1,16 @@
-# solar-edge-to-influxdb
+# solaredge-to-influxdb
 This projects makes it easy to capture output from a Solar Edge inverter and send it to influxdb
 
 # Building the container
 ```
-docker build -t solar-edge-to-influxdb .
+docker build -t solaredge-to-influxdb .
 ```
 
 # Running the container
 If everything is set correctly the script will push data every 60 seconds (by default) to influxdb
 ```
 docker run -d \
-    --name solar-edge-to-influxdb \
+    --name solaredge-to-influxdb \
     --restart=always \
     -e "INVERTER_HOST=" \
     -e "INFLUXDB_HOST=" \
@@ -18,7 +18,7 @@ docker run -d \
     -e "INFLUXDB_USERNAME=" \
     -e "INFLUXDB_PASSWORD=" \
     -e "INFLUXDB_DATABASE=" \
-    solar-edge-to-influxdb
+    solaredge-to-influxdb
 ```
 
 # Additional environment variables
