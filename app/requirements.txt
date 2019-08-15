@@ -1,2 +1,2 @@
-solaredge_local
+solaredge_local>=0.1.4
 influxdb
