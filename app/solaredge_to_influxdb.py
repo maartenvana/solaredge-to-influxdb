@@ -53,7 +53,10 @@ def construct_measurements(data):
     return measurements
 
 def log(message, exception):
-    print("[" + str(datetime.datetime.utcnow())+ "] " + message, exception)
+    if exception is None:
+        print("[" + str(datetime.datetime.utcnow())+ "] " + message)
+    else:
+        print("[" + str(datetime.datetime.utcnow())+ "] " + message, exception)
 
 while True:
     se_status_data = get_solaredge_status_data()
