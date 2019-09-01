@@ -52,16 +52,19 @@ def construct_measurements(data):
     }
     return measurements
 
-def log(message):
-    print("[" + str(datetime.datetime.utcnow())+ "] " + message)
+def log(message, exception):
+    if exception is None:
+        print("[" + str(datetime.datetime.utcnow())+ "] " + message)
+    else:
+        print("[" + str(datetime.datetime.utcnow())+ "] " + message, exception)
 
 while True:
     se_status_data = get_solaredge_status_data()
     if se_status_data is None:
-        log("SolarEdge status data is None")
+        log("SolarEdge status data is None", None)
         time.sleep(10)
         continue
     se_measurements = construct_measurements(se_status_data)
     influx(se_measurements)
-    log("Sent data to influxdb")
+    log("Sent data to influxdb", None)
     time.sleep(int(os.environ['SEND_DATA_INTERVAL']))
