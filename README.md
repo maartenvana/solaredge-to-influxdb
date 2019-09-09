@@ -2,6 +2,7 @@
 This projects makes it easy to capture output from a Solar Edge inverter and send it to influxdb
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=maartenvana_solaredge-to-influxdb&metric=alert_status)](https://sonarcloud.io/dashboard?id=maartenvana_solaredge-to-influxdb)
+![Docker Pulls](https://img.shields.io/docker/pulls/maartenvana/solaredge-to-influxdb)
 
 # Building the container
 ```
